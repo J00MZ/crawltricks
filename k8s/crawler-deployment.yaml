@@ -12,7 +12,7 @@ spec:
       containers:
       - image: j00mz/crawltricks:latest
         name: crawltricks
-        args: ["-u", "https://www.ebay.com", "-d", "2"]
+        args: ["-u", "https://news.ycombinator.com", "-d", "2"]
         resources:
           requests:
             memory: "64Mi"
