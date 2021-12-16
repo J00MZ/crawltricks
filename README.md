@@ -27,7 +27,6 @@ pip install -r requirements.txt
 
 - [Docker](https://www.python.org/)
 - [docker-compose](https://docs.docker.com/compose/install/)
-- In `crawltricks.py` line 26, change `localhost` to `redis`
 
 #### Commands
 
