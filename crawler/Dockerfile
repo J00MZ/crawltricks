@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.10-alpine
 
 # Set the application directory
 WORKDIR .
@@ -6,7 +6,9 @@ WORKDIR .
 RUN apk add --no-cache gcc musl-dev libxslt-dev libmagic
 
 ADD requirements.txt /crawler/requirements.txt
-RUN pip3 install -r /crawler/requirements.txt
+RUN \
+    pip3 install --upgrade pip && \
+    pip3 install -r /crawler/requirements.txt
 
 ADD . /crawler
 
