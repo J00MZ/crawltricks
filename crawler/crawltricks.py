@@ -32,7 +32,7 @@ class Crawler(object):
         start_time = round(time.time(),5)
 
         if root_depth <= 0:
-            self._logger.error(f"Depth {root_depth} is not sufficient.")
+            self._logger.error(f'Depth {root_depth} is not sufficient.')
             exit(1)
         
         self._logger.info(f"Starting crawl of URL [{url}] until depth [{root_depth}] at [{time.strftime('%X %x %Z')}]")
@@ -53,9 +53,7 @@ class Crawler(object):
         # Main logic
         self.start_crawling(url, root_depth)
         # Ends here!
-        duration = round(time.time() - start_time, 3)
-        self.print_tsv()
-        self._logger.info(f"Ended crawl of depth [{root_depth}], on URL [{url}] at [{time.strftime('%X %x %Z')}]. took {duration} seconds")
+        self.print_summary(start_time)
 
     def start_crawling(self, url, depth):
         root_depth = self._depth
@@ -174,4 +172,12 @@ class Crawler(object):
                 self._logger.debug(f"got key {key}")
         self._logger.warn(f"Got {len(all_data)} entries for crawl [{self._root_dir}] depth {self._depth}")
         return all_data
-        
+    
+    def print_summary(self, start_time):
+        url = self._root_url
+        root_depth = self._depth
+        duration = round(time.time() - start_time, 3)
+        duration_H_M_S = time.strftime("%H:%M:%S", time.gmtime(duration))
+        self.print_tsv()
+        self._logger.info(f"Ended crawl of depth [{root_depth}], on URL [{url}] at [{time.strftime('%X %x %Z')}]. took {duration_H_M_S}")
+
