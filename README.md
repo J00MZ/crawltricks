@@ -4,14 +4,13 @@ Solution to [Backend Exercise](Backend_Exercise.pdf)
 
 ## Usage
 
-### Option 1 - commandline
+### Option 1 - CLI
 
 #### Prerequisites
 
-- [Python](https://www.python.org/) 3.6 (with pip) or greater
+- [Python](https://www.python.org/) 3.8 (with pip) or greater
 - pip packages installed 
-- redis installed locally
-- A running `redis-server`
+- A Redis server accessible with DNS name `redis`
 
 #### Commands
 
@@ -25,8 +24,8 @@ pip install -r requirements.txt
 
 #### Prerequisites
 
-- [Docker](https://www.python.org/)
-- [docker-compose](https://docs.docker.com/compose/install/)
+- [`docker`](https://www.python.org/)
+- [`docker-compose`](https://docs.docker.com/compose/install/)
 
 #### Commands
 
