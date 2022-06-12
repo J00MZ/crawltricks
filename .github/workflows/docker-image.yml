@@ -17,4 +17,6 @@ jobs:
     - name: Build the Docker image
       run: |
           cd crawler
-          docker build . --file Dockerfile --tag j00mz/crawltricks:$(date +%s)
+          docker build . -t j00mz/crawltricks:latest
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker push j00mz/crawltricks:latest
