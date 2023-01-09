@@ -4,30 +4,12 @@ Solution to [Backend Exercise](Backend_Exercise.pdf)
 
 ## Usage
 
-### Option 1 - CLI
-
-#### Prerequisites
-
-- [Python](https://www.python.org/) 3.8 (with pip) or greater
-- pip packages installed 
-- A Redis server accessible with DNS name `redis`
-
-#### Commands
-
-``` shell
-cd crawler
-pip install -r requirements.txt
-./main.py -d <DEPTH> -u <URL>
-```
-
-### Option 2 - Docker
-
 #### Prerequisites
 
 - [`docker`](https://www.python.org/)
 - [`docker-compose`](https://docs.docker.com/compose/install/)
 
-#### Commands
+#### Running
 
 ``` shell
 DEPTH=<DEPTH> URL=<URL> docker-compose up -d
